@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react'
 //import {Dropdown} from 'react-bootstrap'
+import axios from 'axios'
 
 const FormLogin = () =>{
     const [data, setData] = useState({
@@ -7,6 +8,7 @@ const FormLogin = () =>{
         password: '',
     })
     const [isShow,setShow] = useState(true)
+    const[isSubmit,setSubmit] = useState(false)
 
     useEffect(() => {
         console.log('Mount Component')
@@ -37,7 +39,21 @@ const FormLogin = () =>{
         }}
         />{' '}
         <br/>
-        <button onClick={()=>{setShow(!isShow)}}>click</button>: {isShow.toString()}
+        <button
+        disabled={isSubmit}
+         onClick={async()=>{
+             setSubmit(true)
+            await axios.post("http://localhost:8080/api/v1/users/login",data
+            )
+            setSubmit(false)
+            
+        }}>
+            Login
+            </button>
+        <br/>
+        <button onClick={()=>{setShow(!isShow)}}>
+            click
+            </button>: {isShow.toString()}
         <br/>
         {isShow && (
         <div>

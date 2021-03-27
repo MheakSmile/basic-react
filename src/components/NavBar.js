@@ -18,6 +18,9 @@ const NavBar = () => {
                     <NavLink to="/counter" className="nav-link">
                         Counter
                     </NavLink>
+                    <NavLink to="/graph" className="nav-link">
+                        Graph
+                    </NavLink>
                 </Nav>
                 <Form inline>
                     <FormControl
