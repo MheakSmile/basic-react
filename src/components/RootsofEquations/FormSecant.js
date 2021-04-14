@@ -5,7 +5,9 @@ const axios = require('axios').default
 
 const FormSecant =()=>{
          const [data, setData] = useState({
-        x: 0,
+        x0: 0,
+        x1:0,
+        eq: '(x^2)-7',
         error: 0.00001,
     })
     const [results, setResults] = useState(null)
@@ -18,11 +20,16 @@ const FormSecant =()=>{
                         <Form.Label column sm="2">
                             Equation :
                         </Form.Label>
-                        <Col sm="10">
+                        <Col sm="3">
                             <Form.Control
-                                plaintext
-                                readOnly
-                                defaultValue="(x^2)-7"
+                               type="text"
+                                placeholder="equation"
+                                 onChange={(e) => {
+                                    setData({
+                                        ...data,
+                                        eq: (e.target.value),
+                                    })
+                                }}
                             />
                         </Col>
                     </Form.Group>
@@ -105,6 +112,8 @@ const FormSecant =()=>{
                                     <th>X1</th>
                                     <th>FX1</th>
                                     <th>FX2</th>
+                                    <th>DELTAX</th>
+                                    <th>XI</th>
                                     <th>ER</th>
                                 </tr>
                             </thead>
@@ -114,8 +123,10 @@ const FormSecant =()=>{
                                         <td>{g.iteration}</td>
                                         <td>{g.x0}</td>
                                         <td>{g.x1}</td>
+                                        <td>{g.fx0}</td>
                                         <td>{g.fx1}</td>
-                                        <td>{g.fx2}</td>
+                                         <td>{g.deltax}</td>
+                                        <td>{g.xi}</td>
                                         <td>{g.er}</td>
                                     </tr>
                                 ))}

@@ -6,6 +6,8 @@
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom'
 import NavBar from "./components/NavBar";
 import HomePage from "./pages/HomePage";
+import LagrangePage from './pages/interpolation/LagrangePage';
+import NewtondiviedPage from './pages/interpolation/NewtondiviedPage';
 import ConjuPage from './pages/Linear/ConjuPage';
 import CramerPage from './pages/Linear/CramerPage';
 import GaussEliPage from './pages/Linear/GaussEliPage';
@@ -74,6 +76,12 @@ function App() {
                 </Route>
                 <Route path={'/Multipleregresstion'}>
                     <MultiplePage/>
+                </Route>
+                <Route path={'/Newton'}>
+                    <NewtondiviedPage/>
+                </Route>
+                <Route path={'/Lagrange'}>
+                    <LagrangePage/>
                 </Route>
                 {/* <Route path={'/login'}>
                     <LoginPages />

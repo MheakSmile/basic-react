@@ -6,7 +6,8 @@ const FormFalsePosition =()=>{
         const [data, setData] = useState({
         xl: 0,
         xr: 0,
-        error: 0.00001,
+        eq: '(x^4)-13',
+        error: 0.000001,
     })
     const [results, setResults] = useState(null)
     return(
@@ -18,11 +19,16 @@ const FormFalsePosition =()=>{
                         <Form.Label column sm="2">
                             Equation :
                         </Form.Label>
-                        <Col sm="10">
+                        <Col sm="3">
                             <Form.Control
-                                plaintext
-                                readOnly
-                                defaultValue="(x^4)-13"
+                               type="text"
+                                placeholder="equation"
+                                 onChange={(e) => {
+                                    setData({
+                                        ...data,
+                                        eq: parseFloat(e.target.value),
+                                    })
+                                }}
                             />
                         </Col>
                     </Form.Group>

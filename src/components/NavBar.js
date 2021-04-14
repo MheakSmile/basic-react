@@ -53,14 +53,14 @@ const NavBar = () => {
                     </NavLink>
                     </NavDropdown>
                     <NavDropdown title="Interpolation & Extrapolation" id="basic-nav-dropdown" className="bg-light">
-                    <NavLink to="/Linear" className="nav-link">
-                        Linear
+                    <NavLink to="/Newton" className="nav-link">
+                        Newton's divied-differences
                     </NavLink>
-                    <NavLink to="/Quadratic" className="nav-link bg-dark text-white">
-                        Quadratic
-                    </NavLink>
-                    <NavLink to="/Polynomial" className="nav-link">
-                        Polynomial
+                    <NavLink to="/Lagrange" className="nav-link bg-dark text-white">
+                        Lagrange
+                    </NavLink>                   
+                    <NavLink to="/Spline" className="nav-link">
+                        Qubirck Spline 
                     </NavLink>
                     </NavDropdown>
                     <NavDropdown title="Least-Squares Regresstion" id="basic-nav-dropdown" className="bg-light">

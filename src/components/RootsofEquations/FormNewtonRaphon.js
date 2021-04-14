@@ -6,7 +6,8 @@ const axios = require('axios').default
 const FormNewtonRaphon =()=>{
      const [data, setData] = useState({
         x: 0,
-        error: 0.00001,
+        eq: '(x^2)-7',
+        error: 0.000001,
     })
     const [results, setResults] = useState(null)
     return(
@@ -18,11 +19,16 @@ const FormNewtonRaphon =()=>{
                         <Form.Label column sm="2">
                             Equation :
                         </Form.Label>
-                        <Col sm="10">
+                        <Col sm="3">
                             <Form.Control
-                                plaintext
-                                readOnly
-                                defaultValue="(x^2)-7"
+                               type="text"
+                                placeholder="equation"
+                                 onChange={(e) => {
+                                    setData({
+                                        ...data,
+                                        eq: (e.target.value),
+                                    })
+                                }}
                             />
                         </Col>
                     </Form.Group>
@@ -84,9 +90,10 @@ const FormNewtonRaphon =()=>{
                             <thead>
                                 <tr>
                                     <th>Iteration</th>
+                                    <th>XI</th>
+                                    <th>FX1</th>
+                                    <th>FX2</th>
                                     <th>X</th>
-                                    <th>FX</th>
-                                    <th>diff(FX)</th>
                                     <th>ER</th>
                                 </tr>
                             </thead>
@@ -94,13 +101,15 @@ const FormNewtonRaphon =()=>{
                                 {results.map((g) => (
                                     <tr key={g.iteration}>
                                         <td>{g.iteration}</td>
+                                        <td>{g.xi}</td>
+                                        <td>{g.fx1}</td>
+                                        <td>{g.fx2}</td>
                                         <td>{g.x}</td>
-                                        <td>{g.fx}</td>
-                                        <td>{g.diffx}</td>
-                                        <td>{g.er}</td>
+                                        <td>{g.err}</td>
                                     </tr>
                                 ))}
                             </tbody>
+                            {console.log(results)}
                         </Table>
                     )}
                 </Form>
