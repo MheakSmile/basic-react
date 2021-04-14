@@ -63,6 +63,17 @@ const NavBar = () => {
                         Polynomial
                     </NavLink>
                     </NavDropdown>
+                    <NavDropdown title="Least-Squares Regresstion" id="basic-nav-dropdown" className="bg-light">
+                    <NavLink to="/Linearregresstion" className="nav-link">
+                        Linear Regression
+                    </NavLink>
+                    <NavLink to="/Polynomialregresstion" className="nav-link bg-dark text-white">
+                        Polynomial Regression
+                    </NavLink>
+                    <NavLink to="/Multipleregresstion" className="nav-link">
+                        Multiple Regression
+                    </NavLink>
+                    </NavDropdown>
                     {/* <NavLink to="/login" className="nav-link">
                         Login
                     </NavLink>

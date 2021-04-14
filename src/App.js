@@ -13,6 +13,9 @@ import GaussjorPage from './pages/Linear/GaussjorPage';
 import GaussSeiPage from './pages/Linear/GaussSeiPage';
 import JacobiPage from './pages/Linear/JacobiPage';
 import LuPage from './pages/Linear/LuPage';
+import LinearPage from './pages/Regresstion/LinearPage';
+import MultiplePage from './pages/Regresstion/MultiplePage';
+import PolynomialPage from './pages/Regresstion/PolynomialPage';
 import BisectionPage from "./pages/RootsofEquations/BisectionPage";
 import FalsePositionPage from './pages/RootsofEquations/FalsePositionPage';
 import NewtonRaphonPage from './pages/RootsofEquations/NewtonRaphonPage';
@@ -63,8 +66,15 @@ function App() {
                 <Route path={'/ConjugateGradient'}>
                     <ConjuPage/>
                 </Route>
- 
-                
+                <Route path={'/Linearregresstion'}>
+                    <LinearPage/>
+                </Route>
+                <Route path={'/Polynomialregresstion'}>
+                    <PolynomialPage/>
+                </Route>
+                <Route path={'/Multipleregresstion'}>
+                    <MultiplePage/>
+                </Route>
                 {/* <Route path={'/login'}>
                     <LoginPages />
                 </Route>
