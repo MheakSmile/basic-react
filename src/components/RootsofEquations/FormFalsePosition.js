@@ -1,5 +1,7 @@
 import {Container,Form,Button,Row,Col,Table} from 'react-bootstrap'
 import { useState } from 'react'
+import React from 'react'
+import {Line} from 'react-chartjs-2'
 const axios = require('axios').default
 
 const FormFalsePosition =()=>{
@@ -10,6 +12,25 @@ const FormFalsePosition =()=>{
         error: 0.000001,
     })
     const [results, setResults] = useState(null)
+    const baba = {
+        labels: [],
+        datasets: [
+            {
+                label: 'Falseposition',
+                data: [],
+                fill: false,
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgba(255, 99, 132, 0.2)',
+            },
+        ],
+    }
+    results !== null &&
+        results.map(
+            (r) => (
+                baba.labels.push(r.x1),
+                baba.datasets[0].data.push(r.fx1)
+            )
+        )
     return(
      <div>
              <Container className="mt-5 p-4 rounded bg-light">
@@ -26,7 +47,7 @@ const FormFalsePosition =()=>{
                                  onChange={(e) => {
                                     setData({
                                         ...data,
-                                        eq: parseFloat(e.target.value),
+                                        eq: (e.target.value),
                                     })
                                 }}
                             />
@@ -127,6 +148,7 @@ const FormFalsePosition =()=>{
                         </Table>
                     )}
                 </Form>
+                <Line data={baba} width={'20%'} height={'10%'}/>
             </Container>
         </div>
 )   
