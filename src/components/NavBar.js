@@ -72,8 +72,9 @@ const NavBar = () => {
                     </NavLink>
                     <NavLink to="/Multipleregresstion" className="nav-link">
                         Multiple Regression
-                    </NavLink>
+                    </NavLink> 
                     </NavDropdown>
+                   
                     {/* <NavLink to="/login" className="nav-link">
                         Login
                     </NavLink>
