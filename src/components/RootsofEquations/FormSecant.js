@@ -44,7 +44,7 @@ const FormSecant =()=>{
                         <Col sm="3">
                             <Form.Control
                                type="text"
-                                placeholder="equation"
+                                placeholder="(x^2)-7"
                                  onChange={(e) => {
                                     setData({
                                         ...data,

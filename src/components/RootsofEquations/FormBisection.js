@@ -43,7 +43,7 @@ const FormBisection =()=>{
                         <Col sm="3">
                             <Form.Control
                                  type="text"
-                                placeholder="equation"
+                                placeholder="(x^4)-13"
                                  onChange={(e) => {
                                     setData({
                                         ...data,

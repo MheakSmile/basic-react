@@ -43,7 +43,7 @@ const FormOnepoint =()=>{
                         <Col sm="3">
                             <Form.Control
                                 type="text"
-                                placeholder="equation"
+                                placeholder="(1/4)+(x/2)"
                                  onChange={(e) => {
                                     setData({
                                         ...data,
