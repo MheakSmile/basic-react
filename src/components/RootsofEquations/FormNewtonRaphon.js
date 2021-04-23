@@ -49,9 +49,12 @@ const FormNewtonRaphon =()=>{
                                         ...data,
                                         eq: (e.target.value),
                                     })
+                                    console.log(e.target)
                                 }}
+                                
                             />
                         </Col>
+                    {/* {console.log(data.eq)} */}
                     </Form.Group>
                     <Form.Group as={Row} controlId="X">
                         <Form.Label column sm="2">
@@ -123,10 +126,10 @@ const FormNewtonRaphon =()=>{
                                     <tr key={g.iteration}>
                                         <td>{g.iteration}</td>
                                         <td>{g.xi}</td>
-                                        <td>{g.fx1}</td>
-                                        <td>{g.fx2}</td>
-                                        <td>{g.x}</td>
-                                        <td>{g.err}</td>
+                                        <td>{g.fx}</td>
+                                        <td>{g.diffx}</td>
+                                        <td>{g.fxi}</td>
+                                        <td>{g.er}</td>
                                     </tr>
                                 ))}
                             </tbody>

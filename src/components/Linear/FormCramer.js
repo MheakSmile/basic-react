@@ -34,6 +34,7 @@ const FormCramer =()=>{
                                         a1: parseFloat(e.target.value),
                                     })
                                 }}
+                                defaultValue="1"
                             />
                         </Col>
                         <Col>
