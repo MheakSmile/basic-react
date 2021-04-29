@@ -112,6 +112,7 @@ const FormOnepoint =()=>{
                                 <tr>
                                     <th>Iteration</th>
                                     <th>X</th>
+                                    <th>XI</th>
                                     <th>ER</th>
                                 </tr>
                             </thead>
@@ -119,7 +120,8 @@ const FormOnepoint =()=>{
                                 {results.map((g) => (
                                     <tr key={g.iteration}>
                                         <td>{g.iteration}</td>
-                                        <td>{g.x}</td>                                          
+                                        <td>{g.x}</td>
+                                         <td>{g.xi}</td>                                                
                                         <td>{g.er}</td>
                                     </tr>
                                 ))}
