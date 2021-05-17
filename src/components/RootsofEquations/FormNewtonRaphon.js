@@ -1,12 +1,11 @@
-import {Container,Form,Button,Row,Col,Table} from 'react-bootstrap'
+import { Container, Form, Button, Row, Col, Table } from 'react-bootstrap'
 import { useState } from 'react'
 import React from 'react'
-import {Line} from 'react-chartjs-2'
+import { Line } from 'react-chartjs-2'
 const axios = require('axios').default
 
-
-const FormNewtonRaphon =()=>{
-     const [data, setData] = useState({
+const FormNewtonRaphon = () => {
+    const [data, setData] = useState({
         x: 0,
         eq: '(x^2)-7',
         error: 0.000001,
@@ -23,17 +22,29 @@ const FormNewtonRaphon =()=>{
                 borderColor: 'rgba(255, 99, 132, 0.2)',
             },
         ],
+        // options: {
+        //     responsive: true,
+        //     plugins: {
+        //         title: {
+        //             display: true,
+        //             text: 'Min and Max Settings',
+        //         },
+        //     },
+        //     scales: {
+        //         y: {
+        //             min: 10,
+        //             max: 50,
+        //         },
+        //     },
+        // },
     }
     results !== null &&
         results.map(
-            (r) => (
-                baba.labels.push(r.xi),
-                baba.datasets[0].data.push(r.fxi)
-            )
+            (r) => (baba.labels.push(r.xi), baba.datasets[0].data.push(r.fxi))
         )
-    return(
-     <div>
-              <Container className="mt-5 p-4 rounded bg-light">
+    return (
+        <div>
+            <Container className="mt-5 p-4 rounded bg-light">
                 <h2>Newton Raphson Method</h2>
                 <Form>
                     <Form.Group as={Row} controlId="Equation">
@@ -42,23 +53,22 @@ const FormNewtonRaphon =()=>{
                         </Form.Label>
                         <Col sm="3">
                             <Form.Control
-                               type="text"
+                                type="text"
                                 placeholder="(x^2)-7"
-                                 onChange={(e) => {
+                                onChange={(e) => {
                                     setData({
                                         ...data,
-                                        eq: (e.target.value),
+                                        eq: e.target.value,
                                     })
                                     console.log(e.target)
                                 }}
-                                
                             />
                         </Col>
-                    {/* {console.log(data.eq)} */}
+                        {/* {console.log(data.eq)} */}
                     </Form.Group>
                     <Form.Group as={Row} controlId="X">
                         <Form.Label column sm="2">
-                            X  :
+                            X :
                         </Form.Label>
                         <Col sm="3">
                             <Form.Control
@@ -110,14 +120,14 @@ const FormNewtonRaphon =()=>{
                         </Col>
                     </Form.Group>
                     {results !== null && (
-                        <Table  bordered hover>
+                        <Table bordered hover>
                             <thead>
                                 <tr>
                                     <th>Iteration</th>
                                     <th>XI</th>
                                     <th>FX1</th>
                                     <th>FX2</th>
-                                    <th>X</th>
+                                    <th>FXI</th>
                                     <th>ER</th>
                                 </tr>
                             </thead>
@@ -133,14 +143,18 @@ const FormNewtonRaphon =()=>{
                                     </tr>
                                 ))}
                             </tbody>
-                            
                         </Table>
                     )}
                 </Form>
-                <Line data={baba} width={'20%'} height={'10%'}/>
+                <Line
+                    data={baba}
+                    width={'20%'}
+                    height={'10%'}
+                    options={{ scales: { x: { min: -10, max: 20 } } }}
+                />
             </Container>
         </div>
-)   
+    )
 }
 
 export default FormNewtonRaphon
